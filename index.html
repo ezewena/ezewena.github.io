@@ -38,6 +38,17 @@
     .bio {
       margin-bottom: 3rem;
       line-height: 1.6;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .bio img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e63946;
     }
 
     .projects {
@@ -117,23 +128,21 @@
 
   <div class="container">
     <section class="bio">
-      <h2>About Me</h2>
-      <p>
-        I am a game programmer with 5 years of experience in the video game industry. 
-        I contributed to the development of a single-player 3D adventure game, working on animation montages 
-        with ALS and implementing core gameplay systems such as checkpoints, door interactions, and save systems.
-      </p>
-      <p>
-        More recently, I worked on a multiplayer project showcased at Gamescom and LAX (Latin America Showcase). 
-        In this project, I wore many hats, developing the combat system, integrating EOS and PDS, implementing 
-        replicated systems, reward systems, analytics, and designing gameplay features such as traps, abilities 
-        (dash, dodge), and combo systems.
-      </p>
+      <img src="assets/images/EZE.jpeg" alt="Ezequiel Calderon">
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I’m a game programmer with 5 years of experience in the video game industry. I contributed to a single-player 3D adventure game, focusing on animation montages with ALS and implementing core gameplay systems such as checkpoints, door interactions, and save/load functionality.
+        </p>
+        <p>
+          More recently, I worked on a multiplayer project showcased at Gamescom and the Latin America Showcase (LAX). In this project, I wore multiple hats, developing the combat system, integrating EOS and PDS, implementing replicated systems, designing reward systems, and adding gameplay mechanics like traps, dash, dodge, and combo systems. I also contributed to analytics implementation to help refine and balance gameplay.
+        </p>
+      </div>
     </section>
 
     <section class="projects">
       <div class="project">
-        <img src="assets/images/JRS.jpg" alt="Junior Solutions">
+        <img src="images/JRS.jpg" alt="Junior Solutions">
         <div class="project-content">
           <h3>Junior Solutions</h3>
           <p>Single-player 3D adventure game where I worked on animation montages, checkpoints, door systems, and save systems.</p>
@@ -142,7 +151,7 @@
       </div>
 
       <div class="project">
-        <img src="assets/images/DKR.png" alt="Multiplayer Project">
+        <img src="images/DKR.png" alt="Multiplayer Project">
         <div class="project-content">
           <h3>DKR Multiplayer Project</h3>
           <p>Multiplayer game featured at Gamescom and LAX Showcase. I developed combat systems, EOS integration, rewards, analytics, and various gameplay mechanics.</p>
