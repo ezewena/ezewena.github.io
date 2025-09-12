@@ -1,140 +1,136 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PORTFOLIO | Ezequiel Calderon</title>
-  <meta name="description" content="Portfolio de Ezequiel Calderon - Programador de videojuegos especializado en gameplay, multiplayer y sistemas en Unreal Engine." />
-
+  <title>Ezequiel Calderon — Game Programmer</title>
+  <meta name="description" content="Portfolio of Ezequiel Calderon — Gameplay & Network Programmer (Unreal Engine, C++/Blueprints)." />
   <style>
+    /* Minimal, modern dark theme inspired layout (original work, not a copy) */
     :root{
-      --bg: #0f1724;
-      --card: #0b1220;
-      --muted: #9aa4b2;
-      --accent: #06b6d4;
-      --glass: rgba(255,255,255,0.04);
-      --radius: 12px;
-      --maxw: 1100px;
-      --gap: 18px;
-      --mono: 'SFMono-Regular', ui-monospace, Menlo, Monaco, monospace;
-      color-scheme: dark;
+      --bg:#070812; --panel:#0e1620; --muted:#98a0ad; --accent:#42d0ff; --glass:rgba(255,255,255,0.03);
+      --radius:14px; --maxw:1100px; --gap:20px; --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e6eef6;background:linear-gradient(180deg,var(--bg),#071025);}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#e6eef6;background:linear-gradient(180deg,#03040a,#071026);-webkit-font-smoothing:antialiased}
     a{color:var(--accent);text-decoration:none}
-    .wrap{max-width:var(--maxw);margin:36px auto;padding:28px}
+    .container{max-width:var(--maxw);margin:40px auto;padding:28px}
 
-    header{display:flex;gap:20px;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:18px;align-items:center}
-    .avatar{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#0ea5a6,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
-    h1{margin:0;font-size:28px}
-    .role{color:var(--muted);font-size:14px}
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:20px}
+    .sub{color:var(--muted);font-size:13px}
+    nav a{margin-left:14px;color:var(--muted);font-size:14px}
 
-    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:22px}
-    .card{background:linear-gradient(180deg,var(--card),rgba(11,18,32,0.6));padding:18px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
-    .about{line-height:1.5;color:var(--muted)}
-    .cta{margin-top:12px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:#022025;font-weight:600}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:20px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(3,8,18,0.6)}
+    .intro h2{margin:0 0 8px 0;font-size:28px}
+    .intro p{color:var(--muted);line-height:1.6}
+    .cta{margin-top:16px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#021223;font-weight:700}
 
-    .projects{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap)}
-    .proj{padding:14px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.03)}
-    .proj h3{margin:0 0 8px 0}
-    .tags{font-family:var(--mono);font-size:12px;color:var(--muted)}
-    .proj p{color:var(--muted);font-size:14px;margin:8px 0}
-    .actions{display:flex;gap:8px;flex-wrap:wrap}
-    .muted{color:var(--muted);font-size:13px}
+    /* Projects grid */
+    .projects{margin-top:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+    .project{padding:16px;border-radius:12px;background:var(--panel);border:1px solid rgba(255,255,255,0.02)}
+    .project h3{margin:0 0 6px}
+    .tags{font-family:var(--mono);color:var(--muted);font-size:12px}
+    .project p{color:var(--muted);margin:10px 0}
+    .project .links{display:flex;gap:8px}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--muted)}
 
+    /* Footer */
     footer{margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
 
-    @media (max-width:880px){
+    /* responsive */
+    @media (max-width:920px){
       .hero{grid-template-columns:1fr}
-      .avatar{width:60px;height:60px}
+      .projects{grid-template-columns:1fr}
     }
 
-    .placeholder{display:inline-block;background:linear-gradient(90deg,#12202b,#0b1830);padding:6px 8px;border-radius:6px;color:var(--muted);font-size:13px}
+    /* subtle animated gradient accent on hero underline */
+    .accent-line{height:3px;border-radius:6px;background:linear-gradient(90deg,#42d0ff,#7c3aed,#9be15d);background-size:200% 100%;animation:slide 6s linear infinite}
+    @keyframes slide{from{background-position:0%}to{background-position:200%}}
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
     <header>
       <div class="brand">
-        <div class="avatar">EC</div>
+        <div class="logo">EC</div>
         <div>
-          <h1 id="name">Ezequiel Calderon</h1>
-          <div class="role" id="role">Gameplay Programmer — Unreal C++ / Blueprints</div>
+          <h1>Ezequiel Calderon</h1>
+          <div class="sub">Gameplay & Network Programmer — Unreal Engine (C++ / Blueprints)</div>
         </div>
       </div>
       <nav>
-        <a href="#projects">Proyectos</a>
-        <span style="margin:0 8px;color:var(--muted)">•</span>
-        <a href="#contact">Contacto</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/ezewena" target="_blank">GitHub</a>
       </nav>
     </header>
 
     <section class="hero">
-      <div class="card">
-        <h2>Sobre mí</h2>
-        <p class="about" id="about">
-          Soy programador de videojuegos con más de 5 años de experiencia en la industria. Trabajé en el desarrollo de un juego single player de aventura 3D, implementando sistemas como anim montages con ALS, gameplay básico (abrir puertas, checkpoints, sistema de guardado) y colaborando en el diseño técnico. También participé en un proyecto multijugador presentado en Gamescom y en el LAX Showcase, donde implementé sistemas de combate, trampas, habilidades (dash, dodge, combos), integración de EOS (PDS, recompensas, analytics) y replicación en red. Me apasiona crear experiencias sólidas y escalables para jugadores.
+      <div class="card intro">
+        <h2>Hi — I'm Ezequiel.</h2>
+        <div class="accent-line" style="width:120px;margin:12px 0 18px 0"></div>
+        <p>
+          I’m a game programmer with over 5 years in the industry. I build gameplay systems, animation montage workflows (ALS), and multiplayer features with a server-authoritative approach. I enjoy turning design ideas into robust, maintainable code and shipping polished demos.
         </p>
+
         <div class="cta">
-          <a class="btn" id="cta-github" href="https://github.com/ezewena" target="_blank">Ver GitHub</a>
-          <span style="margin-left:10px" class="placeholder">2 proyectos publicados en Steam</span>
+          <a class="btn" href="https://github.com/ezewena" target="_blank">View my GitHub</a>
+          <a class="ghost" style="margin-left:10px" href="/assets/Ezequiel_Calderon_CV.pdf" target="_blank">Download CV</a>
         </div>
       </div>
 
       <aside class="card">
-        <h3>Contacto</h3>
-        <div class="muted" id="contact">
-          <div id="email">ezewena3@gmail.com</div>
-          <div id="links" style="margin-top:10px">
-            <div><a id="link-github" href="https://github.com/ezewena" target="_blank">GitHub</a></div>
-            <div><a id="link-linkedin" href="https://www.linkedin.com/in/ezequiel-calderon-9743381a5/" target="_blank">LinkedIn</a></div>
-          </div>
-        </div>
+        <h3>Contact</h3>
+        <p class="tags">Email</p>
+        <p style="margin-top:6px"> <a href="mailto:ezewena3@gmail.com">ezewena3@gmail.com</a> </p>
+        <p class="tags" style="margin-top:10px">LinkedIn</p>
+        <p style="margin-top:6px"><a href="https://www.linkedin.com/in/ezequiel-calderon-9743381a5/" target="_blank">linkedin.com/in/ezequiel-calderon</a></p>
       </aside>
     </section>
 
-    <section style="margin-top:18px">
-      <h2 id="projects">Proyectos destacados</h2>
-
+    <section style="margin-top:26px">
+      <h2 id="projects">Selected Projects</h2>
       <div class="projects" id="projects-grid"></div>
     </section>
 
     <footer>
-      <div>Hecho por <strong id="foot-name">Ezequiel Calderon</strong></div>
-      <div class="muted">Portfolio personal • Publicado con GitHub Pages</div>
+      <div>© 2025 Ezequiel Calderon</div>
+      <div class="sub">Designed for clarity — Ready for GitHub Pages</div>
     </footer>
   </div>
 
   <script>
+    // Projects array — two projects with direct Steam links
     const projects = [
       {
-        title: 'Junior Solutions (Single Player 3D)',
-        short: 'Juego de aventura 3D en el que implementé sistemas de anim montage con ALS, gameplay básico (puertas, checkpoints, guardado) y soporte técnico general.',
-        tech: 'Unreal Engine, C++ / Blueprints',
-        github: 'https://store.steampowered.com/app/1460520/Junior_Solutions/',
-        demo: 'https://store.steampowered.com/app/1460520/Junior_Solutions/',
-        img: ''
+        title: 'Junior Solutions (Single-player 3D)',
+        desc: 'Contributed ALS animation montages, core gameplay (doors, checkpoints, save system) and general technical support for the title.',
+        tech: 'Unreal Engine · C++ · Blueprints',
+        steam: 'https://store.steampowered.com/app/1460520/Junior_Solutions/'
       },
       {
-        title: 'Proyecto Multijugador (Gamescom & LAX Showcase)',
-        short: 'Juego multijugador en el que trabajé en sistemas de combate, habilidades (dash, dodge, combos), trampas, EOS (PDS, recompensas, analytics) y replicación de gameplay.',
-        tech: 'Unreal Engine, EOS, Networking',
-        github: 'https://store.steampowered.com/app/2146310?snr=5000_5100__',
-        demo: 'https://store.steampowered.com/app/2146310?snr=5000_5100__',
-        img: ''
+        title: 'Multiplayer Showcase Project',
+        desc: 'Worked on combat systems, replicated gameplay, EOS (PDS, rewards), analytics, and abilities (dash, dodge, combos). Shown at Gamescom and LAX Showcase.',
+        tech: 'Unreal Engine · EOS · Networking',
+        steam: 'https://store.steampowered.com/app/2146310?snr=5000_5100__'
       }
     ];
 
     const grid = document.getElementById('projects-grid');
-    projects.forEach(p=>{
-      const div = document.createElement('div'); div.className='proj card';
-      const img = p.img ? `<div style="height:120px;background:url('${p.img}') center/cover;border-radius:8px;margin-bottom:10px"></div>` : '';
-      div.innerHTML = `${img}<h3>${p.title}</h3><div class='tags'>${p.tech}</div><p>${p.short}</p><div class='actions'><a class='btn' href='${p.demo}' target='_blank'>Steam</a><a class='placeholder' href='${p.github}' target='_blank'>Steam</a></div>`;
-      grid.appendChild(div);
+    projects.forEach(p => {
+      const el = document.createElement('div'); el.className = 'project card';
+      el.innerHTML = `<h3>${p.title}</h3><div class="tags">${p.tech}</div><p>${p.desc}</p><div class="links"><a class="btn" href="${p.steam}" target="_blank">View on Steam</a><a class="ghost" href="${p.steam}" target="_blank">Steam page</a></div>`;
+      grid.appendChild(el);
     });
   </script>
-
 </body>
+</html>
+
 </html>
