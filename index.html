@@ -1,138 +1,162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ezequiel Calderon — Game Programmer</title>
-  <meta name="description" content="Portfolio of Ezequiel Calderon — Gameplay & Network Programmer (Unreal Engine, C++/Blueprints)." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ezequiel Calderon - Game Programmer</title>
   <style>
-    /* Minimal, modern dark theme inspired layout (original work, not a copy) */
-    :root{
-      --bg:#070812; --panel:#0e1620; --muted:#98a0ad; --accent:#42d0ff; --glass:rgba(255,255,255,0.03);
-      --radius:14px; --maxw:1100px; --gap:20px; --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#e6eef6;background:linear-gradient(180deg,#03040a,#071026);-webkit-font-smoothing:antialiased}
-    a{color:var(--accent);text-decoration:none}
-    .container{max-width:var(--maxw);margin:40px auto;padding:28px}
-
-    /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
-    h1{margin:0;font-size:20px}
-    .sub{color:var(--muted);font-size:13px}
-    nav a{margin-left:14px;color:var(--muted);font-size:14px}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:20px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(3,8,18,0.6)}
-    .intro h2{margin:0 0 8px 0;font-size:28px}
-    .intro p{color:var(--muted);line-height:1.6}
-    .cta{margin-top:16px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#021223;font-weight:700}
-
-    /* Projects grid */
-    .projects{margin-top:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
-    .project{padding:16px;border-radius:12px;background:var(--panel);border:1px solid rgba(255,255,255,0.02)}
-    .project h3{margin:0 0 6px}
-    .tags{font-family:var(--mono);color:var(--muted);font-size:12px}
-    .project p{color:var(--muted);margin:10px 0}
-    .project .links{display:flex;gap:8px}
-    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--muted)}
-
-    /* Footer */
-    footer{margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
-
-    /* responsive */
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr}
-      .projects{grid-template-columns:1fr}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #f5f5f5;
     }
 
-    /* subtle animated gradient accent on hero underline */
-    .accent-line{height:3px;border-radius:6px;background:linear-gradient(90deg,#42d0ff,#7c3aed,#9be15d);background-size:200% 100%;animation:slide 6s linear infinite}
-    @keyframes slide{from{background-position:0%}to{background-position:200%}}
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #1a1a1a;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .bio {
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project {
+      background: #1f1f1f;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1rem;
+    }
+
+    .project-content h3 {
+      margin-top: 0;
+    }
+
+    .project-content p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-content a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #e63946;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .project-content a:hover {
+      background: #ff4d5a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1a1a1a;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: #e63946;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Ezequiel Calderon</h1>
+    <p>Game Programmer</p>
+  </header>
+
   <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">EC</div>
-        <div>
-          <h1>Ezequiel Calderon</h1>
-          <div class="sub">Gameplay & Network Programmer — Unreal Engine (C++ / Blueprints)</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="https://github.com/ezewena" target="_blank">GitHub</a>
-      </nav>
-    </header>
+    <section class="bio">
+      <h2>About Me</h2>
+      <p>
+        I am a game programmer with 5 years of experience in the video game industry. 
+        I contributed to the development of a single-player 3D adventure game, working on animation montages 
+        with ALS and implementing core gameplay systems such as checkpoints, door interactions, and save systems.
+      </p>
+      <p>
+        More recently, I worked on a multiplayer project showcased at Gamescom and LAX (Latin America Showcase). 
+        In this project, I wore many hats, developing the combat system, integrating EOS and PDS, implementing 
+        replicated systems, reward systems, analytics, and designing gameplay features such as traps, abilities 
+        (dash, dodge), and combo systems.
+      </p>
+    </section>
 
-    <section class="hero">
-      <div class="card intro">
-        <h2>Hi — I'm Ezequiel.</h2>
-        <div class="accent-line" style="width:120px;margin:12px 0 18px 0"></div>
-        <p>
-          I’m a game programmer with over 5 years in the industry. I build gameplay systems, animation montage workflows (ALS), and multiplayer features with a server-authoritative approach. I enjoy turning design ideas into robust, maintainable code and shipping polished demos.
-        </p>
-
-        <div class="cta">
-          <a class="btn" href="https://github.com/ezewena" target="_blank">View my GitHub</a>
-          <a class="ghost" style="margin-left:10px" href="/assets/Ezequiel_Calderon_CV.pdf" target="_blank">Download CV</a>
+    <section class="projects">
+      <div class="project">
+        <img src="JRS.jpg" alt="Junior Solutions">
+        <div class="project-content">
+          <h3>Junior Solutions</h3>
+          <p>Single-player 3D adventure game where I worked on animation montages, checkpoints, door systems, and save systems.</p>
+          <a href="https://store.steampowered.com/app/1460520/Junior_Solutions/" target="_blank">View on Steam</a>
         </div>
       </div>
 
-      <aside class="card">
-        <h3>Contact</h3>
-        <p class="tags">Email</p>
-        <p style="margin-top:6px"> <a href="mailto:ezewena3@gmail.com">ezewena3@gmail.com</a> </p>
-        <p class="tags" style="margin-top:10px">LinkedIn</p>
-        <p style="margin-top:6px"><a href="https://www.linkedin.com/in/ezequiel-calderon-9743381a5/" target="_blank">linkedin.com/in/ezequiel-calderon</a></p>
-      </aside>
+      <div class="project">
+        <img src="DKR.png" alt="Multiplayer Project">
+        <div class="project-content">
+          <h3>DKR Multiplayer Project</h3>
+          <p>Multiplayer game featured at Gamescom and LAX Showcase. I developed combat systems, EOS integration, rewards, analytics, and various gameplay mechanics.</p>
+          <a href="https://store.steampowered.com/app/2146310?snr=5000_5100__" target="_blank">View on Steam</a>
+        </div>
+      </div>
     </section>
-
-    <section style="margin-top:26px">
-      <h2 id="projects">Selected Projects</h2>
-      <div class="projects" id="projects-grid"></div>
-    </section>
-
-    <footer>
-      <div>© 2025 Ezequiel Calderon</div>
-      <div class="sub">Designed for clarity — Ready for GitHub Pages</div>
-    </footer>
   </div>
 
-  <script>
-    // Projects array — two projects with direct Steam links
-    const projects = [
-      {
-        title: 'Junior Solutions (Single-player 3D)',
-        desc: 'Contributed ALS animation montages, core gameplay (doors, checkpoints, save system) and general technical support for the title.',
-        tech: 'Unreal Engine · C++ · Blueprints',
-        steam: 'https://store.steampowered.com/app/1460520/Junior_Solutions/'
-        img: img src="assets/images/DKR.png" alt="DKR"
-      },
-      {
-        title: 'Multiplayer Showcase Project',
-        desc: 'Worked on combat systems, replicated gameplay, EOS (PDS, rewards), analytics, and abilities (dash, dodge, combos). Shown at Gamescom and LAX Showcase.',
-        tech: 'Unreal Engine · EOS · Networking',
-        steam: 'https://store.steampowered.com/app/2146310?snr=5000_5100__'
-        img: img src="assets/images/JRS.png" alt="JRS"
-      }
-    ];
-
-    const grid = document.getElementById('projects-grid');
-    projects.forEach(p => {
-      const el = document.createElement('div'); el.className = 'project card';
-      el.innerHTML = `<h3>${p.title}</h3><div class="tags">${p.tech}</div><p>${p.desc}</p><div class="links"><a class="btn" href="${p.steam}" target="_blank">View on Steam</a><a class="ghost" href="${p.steam}" target="_blank">Steam page</a></div>`;
-      grid.appendChild(el);
-    });
-  </script>
+  <footer>
+    <p>Contact me:</p>
+    <a href="mailto:ezewena3@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/ezequiel-calderon-9743381a5/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/ezewena" target="_blank">GitHub</a>
+  </footer>
 </body>
-</html>
-
 </html>
